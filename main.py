@@ -14,7 +14,8 @@ def index():
 @app.route("/add_task", methods=["POST"])
 def add_task_fr():
     task = request.form.get("task")
-    add_task(task)
+    if task and task.strip():
+        add_task(task)
     return redirect("/")
 
 
@@ -23,12 +24,12 @@ def del_task_fr(id):
     del_task(id)
     return redirect("/")
 
-
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit_task_fr(id):
     if request.method == "POST":
         title_n = request.form.get("task")
-        change_task(id, title_n)
+        if title_n and title_n.strip():
+            change_task(id, title_n)
         return redirect("/")
 
     tasks = get_tasks()
@@ -40,4 +41,5 @@ def edit_task_fr(id):
             break
     return render_template("edit_task.html", task=task)
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -20,12 +20,11 @@
                     <i class="material-icons">edit</i></a>
             </li>
             {% endfor %}
-
         </ul>
     </h2>
-    <form method="post" action="{{ url_for('add_task_fr') }}">
-        <input type="text" name="task" />
-        <button>Add tasks</button>
+    <form method='post' action='{{ url_for(' add_task_fr') }}'>
+        <input type='text' name='task' />
+        <button>Добавить задачу</button>
     </form>
 </body>
 

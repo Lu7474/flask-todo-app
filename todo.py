@@ -1,11 +1,12 @@
 import json
 import os
 
-file_name = "todo_list.json"
+file_name = "todo.json"
 
 if not os.path.exists(file_name):
     with open(file_name, "w", encoding="utf-8") as f:
         json.dump([], f, indent=4, ensure_ascii=False)
+
 
 def get_tasks():
     with open(file_name, encoding="utf-8") as f:
