@@ -1,71 +1,70 @@
 # Flask TODO App
 
-Simple web application for task management built with Flask.
+Простое веб-приложение для управления списком задач на Flask.
 
-## Features
+## Возможности
 
-- Create, edit and delete tasks
-- Data stored in JSON file
-- Minimalist interface with Material Icons
-- Russian language UI
+- Создание, редактирование и удаление задач
+- Хранение данных в JSON файле
+- Минималистичный интерфейс с Material Icons
 
-## Tech Stack
+## Технологии
 
 - Python 3
 - Flask 3.0.3
-- Jinja2 templates
-- JSON for data storage
+- Jinja2 шаблоны
+- JSON для хранения данных
 
-## Installation
+## Установка
 
-1. Clone the repository:
+1. Клонировать репозиторий:
 ```bash
-git clone https://github.com/your-username/flask-todo-app.git
+git clone https://github.com/Lu7474/flask-todo-app.git
 cd flask-todo-app
 ```
 
-2. Create virtual environment:
+2. Создать виртуальное окружение:
 ```bash
 python -m venv env
 source env/bin/activate  # Linux/Mac
 env\Scripts\activate     # Windows
 ```
 
-3. Install dependencies:
+3. Установить зависимости:
 ```bash
 pip install flask
 ```
 
-4. Run the application:
+4. Запустить приложение:
 ```bash
 python main.py
 ```
 
-5. Open http://127.0.0.1:5000 in your browser
+5. Открыть http://127.0.0.1:5000 в браузере
 
-## Project Structure
+## Структура проекта
 
 ```
 TODO/
-├── main.py           # Flask routes and app configuration
-├── todo.py           # Task management logic (CRUD)
-├── todo_list.json    # Data storage
+├── main.py           # Flask роуты и конфигурация
+├── todo.py           # Логика работы с задачами (CRUD)
+├── todo_list.json    # Хранилище данных
 ├── templates/
-│   ├── index.html    # Main page
-│   └── edit_task.html # Task editing page
+│   ├── index.html    # Главная страница
+│   └── edit_task.html # Страница редактирования
 ├── requirements.txt
 └── README.md
 ```
 
-## API Endpoints
+## API
 
-| Route | Method | Description |
-|-------|--------|-------------|
-| `/` | GET | Display all tasks |
-| `/add_task` | POST | Add new task |
-| `/delete/<id>` | GET | Delete task |
-| `/edit/<id>` | GET/POST | Edit task |
+| Маршрут | Метод | Описание |
+|---------|-------|----------|
+| `/` | GET | Список всех задач |
+| `/add_task` | POST | Добавить задачу |
+| `/delete/<id>` | GET | Удалить задачу |
+| `/edit/<id>` | GET/POST | Редактировать задачу |
 
-## License
+## Лицензия
 
 MIT
