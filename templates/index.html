@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>TODO</title>
+</head>
+
+<body>
+    <h1>TODO</h1>
+    <h2>
+        <ul>
+            {% for task in tasks %}
+            <li>{{ task.title }}
+                <a href="{{ url_for('del_task_fr', id=task.id) }}">
+                    <i class="material-icons">delete</i></a>
+                <a href="{{ url_for('edit_task_fr', id=task.id) }}">
+                    <i class="material-icons">edit</i></a>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </h2>
+    <form method="post" action="{{ url_for('add_task_fr') }}">
+        <input type="text" name="task" />
+        <button>Add tasks</button>
+    </form>
+</body>
+
+</html>
